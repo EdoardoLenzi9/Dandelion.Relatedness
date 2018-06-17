@@ -1,0 +1,89 @@
+# Build
+
+javac \
+-d \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/build/classes \
+-classpath \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/build/classes:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/SizeOf_0_2_2:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/animal-sniffer-annotations-1.14.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-collections-20040616.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-configuration-1.10.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-io-2.5.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-lang-2.6.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-logging-1.1.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-math3-3.6.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/error_prone_annotations-2.0.18.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/fastutil-8.1.0.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/guava-23.2-jre.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/j2objc-annotations-1.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/jsap-2.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/jsr305-1.3.9.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/logback-classic-1.2.3.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/logback-core-1.2.3.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/slf4j-api-1.7.25.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/SizeOf_0_2_2/SizeOf.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/ObjectSizeFetcher.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-2.3.6.jar \
+-sourcepath \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/build/empty \
+-target \
+1.8 \
+-encoding \
+UTF-8 \
+-g \
+-processorpath \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/SizeOf_0_2_2:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/animal-sniffer-annotations-1.14.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-collections-20040616.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-configuration-1.10.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-io-2.5.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-lang-2.6.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-logging-1.1.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-math3-3.6.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/error_prone_annotations-2.0.18.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/fastutil-8.1.0.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/guava-23.2-jre.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/j2objc-annotations-1.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/jsap-2.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/jsr305-1.3.9.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/logback-classic-1.2.3.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/logback-core-1.2.3.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/slf4j-api-1.7.25.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/SizeOf_0_2_2/SizeOf.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/ObjectSizeFetcher.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-2.3.6.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/build/empty \
+-s \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/build/generated-sources/ap-source-output \
+-source \
+1.8 \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/src/eu/dandelion/Domain/RelatednessHashMap.java \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/src/eu/dandelion/Domain/RelatednessMatrix.java \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/src/eu/dandelion/Dump/DumpGenerator.java \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/src/eu/dandelion/Implementations/HashMapImplementation.java \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/src/eu/dandelion/Implementations/NativeImplementation.java \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/src/eu/dandelion/Main.java \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/src/eu/dandelion/Memory/MemoryMoniton.java
+
+# Run
+
+java \
+-Dfile.encoding=UTF-8 \
+-javaagent:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/ObjectSizeFetcher.jar \
+-classpath \
+/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/SizeOf_0_2_2:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/animal-sniffer-annotations-1.14.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-collections-20040616.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-configuration-1.10.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-io-2.5.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-lang-2.6.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-logging-1.1.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/commons-math3-3.6.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/error_prone_annotations-2.0.18.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/fastutil-8.1.0.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/guava-23.2-jre.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/j2objc-annotations-1.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/jsap-2.1.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/jsr305-1.3.9.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/logback-classic-1.2.3.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/logback-core-1.2.3.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-deps/slf4j-api-1.7.25.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/SizeOf_0_2_2/SizeOf.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/ObjectSizeFetcher.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/lib/dsiutils-2.3.6.jar:/home/eddy/Code/Dandelion.Relatedness/Dandelion.Relatedness/build/classes \
+eu.dandelion.Main
+
+
+
+
+
+
+## compile using jar files 
+
+You can include your jar files in the "javac" command using the "-cp" option.
+
+javac -cp ".:/home/path/mail.jar:/home/path/servlet.jar;" MyJavaFile.java
+
+Instead of "-cp" you could also use "-classpath"
+
+javac -classpath ".:/home/path/mail.jar:/home/path/servlet.jar:" MyJavaFile.java
+
+## ClassPath separator
+From your comment above, it looks like you tried:
+
+javac -cp .;lib.jar a.java on your Ubuntu system. The CLASSPATH separator is : on Unix systems and ; on Windows.
+
+Ubuntu considered the command up to the ;, java -cp . and thus gave the message.
+
+javac -cp .:lib.jar a.java should compile fine.
+
+
+## -d option
+-d directory  Specify where to place generated class files
+
+## -sourcepath
+-sourcepath <path> Specify where to find input source files
+
+## -g 
+generate all debugger info
+
+## -processorpath
+-processorpath <path> Specify where to find annotation processors
+
+## -encoding 
+-encoding UTF-8
+
+##  -source 
+-source <release> Provide source compatibility with specified release
+
+sudo docker rm dandelion-volume
+sudo docker build -t dandelion-container .
+sudo docker run -it -p 8080:8080 -v /home/eddy/Code/Dandelion.Relatedness/.:/usr/src/dandelion --name dandelion-volume dandelion-container
+
+## Ant 
+sudo apt-get install ant
+ant compile 
+ant jar 
+

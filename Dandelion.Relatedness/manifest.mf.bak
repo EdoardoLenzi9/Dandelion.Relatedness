@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: eu.dandelion.Main
+Class-Path: file:///./Dandelion.Relatedness/dist/Dandelion.jar
+Premain-Class: ObjectSizeFetcher
