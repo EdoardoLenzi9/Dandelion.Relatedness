@@ -1,6 +1,7 @@
 package eu.dandelion;
 
 import eu.dandelion.Dump.DumpGenerator;
+import eu.dandelion.Dump.DumpRandomGenerator;
 import eu.dandelion.Implementations.HashMapImplementation;
 import eu.dandelion.Implementations.NativeImplementation;
 import static java.lang.System.out;
@@ -14,19 +15,11 @@ public class Main {
     public static String dump = "../dump.txt";
 
     public static void main(String[] args) throws Exception {
-        out.println("Hello World jooouuu");
-        List<int[]> array = new ArrayList<int[]>();
-        for(int i = 0; i < 10; i++)
-        {
-            out.println("Add 100MB");
-            sleep(1000);
-            array.add(new int[10000000]);
-        }
-        sleep(60*60*1000);
-
-/*
-        //DumpGenerator.Generate(60000, 50000, 0.57, 0.005);
-        long before;
+        out.println("Process Started");
+        
+        DumpRandomGenerator.randomPostingList(500, 300, 0.5);
+        //GenerateDump(60000);
+        /* long before;
         long after;
         
         before = getAllocatedMemory();
@@ -39,12 +32,31 @@ public class Main {
         before = after;
         after = getAllocatedMemory();
         PrintAllocatedMemory(before, after);
-         
-
+  
         NativeImplementation nativeImplementation = new NativeImplementation(dump);
         out.println(nativeImplementation.Relatedness(53675726, 53675670));//33590, 33580));
         HashMapImplementation hashMapImplementation = new HashMapImplementation(dump);
-        out.println(hashMapImplementation.Relatedness(53675726, 53675670));
+        out.println(hashMapImplementation.Relatedness(53675726, 53675670));       
 */
+
+        out.println("Process Ended");
+    }
+    
+    public static void GenerateDump(int numberOfNodes) throws Exception {
+        DumpGenerator.Generate(numberOfNodes, (int)(numberOfNodes * 0.85), 0.57, 0.005);
+    }
+    
+    public static void DockerTest() throws Exception {
+        out.println("Test Start");
+        List<int[]> array = new ArrayList<int[]>();
+        for(int i = 0; i < 10; i++)
+        {
+            out.println("Allocates more memory (+ 100MB)");
+            sleep(1000);
+            array.add(new int[10000000]);
+        }
+        out.println("Test Sleep");
+        sleep(60*60*1000);
+        out.println("Test End");
     }
 }
