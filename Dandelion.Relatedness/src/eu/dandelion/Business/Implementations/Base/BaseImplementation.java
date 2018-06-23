@@ -28,7 +28,7 @@ public abstract class BaseImplementation {
         for (int i = 0; i < postingList.length; i++) {
             int key = ((postingList[i++] & 0xFF) << 16)
                     + ((postingList[i++] & 0xFF) << 8)
-                    + ((postingList[i++] & 0xFF) << 0);
+                    + ((postingList[i++] & 0xFF) /*<< 0*/);
             float value = decodeRelatedness(postingList[i]);
             out.println("\t" + key + " ->" + value);
         }

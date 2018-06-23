@@ -8,12 +8,10 @@ import eu.dandelion.Domain.Models.Localizations;
 import eu.dandelion.Domain.Models.PostingListItem;
 import eu.dandelion.Domain.Models.TestCase;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -45,7 +43,7 @@ public class RandomDumpGenerator implements IDumpGenerator {
         dump.append(Localizations.Treshold).append('\n');
 
         // generate a random domain (sorted)
-        for (int i = 0; i < nodeSize; i++) {
+        for (int i = 0; i <= nodeSize; i++) {
             domain.add(random.nextInt(maxId));
             i = domain.size();
         }
@@ -92,7 +90,7 @@ public class RandomDumpGenerator implements IDumpGenerator {
         
         // TestCases        
         NativeImplementation nativeImplementation = new NativeImplementation(Localizations.GeneratedDumpPath);
-        ArrayList<Integer> testDomain = new ArrayList<Integer>(domain);
+        ArrayList<Integer> testDomain = new ArrayList(domain);
         for(int i = 0; i < Localizations.NumberOfTests; i++)
         {
             int firstId = testDomain.get(random.nextInt(nodeSize - 1));
@@ -106,10 +104,9 @@ public class RandomDumpGenerator implements IDumpGenerator {
     
     public List<Integer> LoadDomain(String path) throws FileNotFoundException {
         BufferedReader fbr = new BufferedReader(new FileReader(path));
-        String line = new String();
-        List<Integer> list = new ArrayList<Integer>();
+        String line;
+        List<Integer> list = new ArrayList();
         try {
-            int idx = 0;
             String END_OF_FILE = "" + '\0';
 
             while ((line = fbr.readLine()) != null) {
@@ -126,10 +123,9 @@ public class RandomDumpGenerator implements IDumpGenerator {
 
     public List<TestCase> ReadTestCases(String path) throws FileNotFoundException {
         BufferedReader fbr = new BufferedReader(new FileReader(path));
-        String line = new String();
-        List<TestCase> testCases = new ArrayList<TestCase>();
+        String line;
+        List<TestCase> testCases = new ArrayList();
         try {
-            int idx = 0;
             String END_OF_FILE = "" + '\0';
 
             while ((line = fbr.readLine()) != null) {

@@ -23,13 +23,13 @@ public class OrderedDumpGenerator {
         }
 
         for (int i = nullNumber; i < nodeSize; i++) {
-            writer.println(maxId - i + " " + i + " " + RandomPostingList(nodeSize, relForNode, i));
+            writer.println(maxId - i + " " + i + " " + RandomPostingList(relForNode, i));
         }
 
         writer.close();
     }
 
-    private static String RandomPostingList(int nodeSize, int relForNode, int currentIndex) {
+    private static String RandomPostingList(int relForNode, int currentIndex) {
         relForNode = relForNode > currentIndex ? (currentIndex - 1) : relForNode;
 
         byte[] tuple = new byte[relForNode * 4];

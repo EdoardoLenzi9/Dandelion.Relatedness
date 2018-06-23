@@ -5,6 +5,9 @@ public class Localizations {
     public static final int MinIntersection = 2;
     public static final double Treshold = 1.0;
     public static final int NumberOfTests = 4000;
+    public static final int MaxId = 5000;
+    public static final int NodesSize = 4000;
+    public static final double NullPercentage = 0.5;
     
     public static final String GeneratedDumpPath = "src/eu/dandelion/Domain/Assets/generated-dump.txt";
     public static final String DomainPath = "src/eu/dandelion/Domain/Assets/domain.txt";

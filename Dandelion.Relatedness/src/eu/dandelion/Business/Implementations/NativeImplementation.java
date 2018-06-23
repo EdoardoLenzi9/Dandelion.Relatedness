@@ -82,54 +82,6 @@ public class NativeImplementation extends BaseImplementation implements IBaseImp
             return _configuredMinRel + byteRel * (1 - _configuredMinRel);
     }
 
-    /*
-    public float Relatedness(int a, int b) {
-        if (a == b) {
-            return 1f;
-        }
-        int nodeA = data.map[a];
-        int nodeB = data.map[b];
-        if (nodeA < 0 || nodeB < 0) {
-            return 0f;
-        }
-
-        int key = a > b ? nodeB : nodeA;
-        byte[] array = a > b ? _matrix[nodeA] : _matrix[nodeB];
-
-        if (array == null) {
-            return 0f;
-        }
-
-        int start = 0;
-        int end = array.length - RelatednessMatrix.EL_SIZE;
-        int pos = -1;
-        while (pos == -1 && start <= end) {
-            int idx = ((start + end) / RelatednessMatrix.EL_SIZE) / 2;
-
-            int idx_value = ((array[idx * RelatednessMatrix.EL_SIZE] & 0xFF) << 16)
-                    + ((array[idx * RelatednessMatrix.EL_SIZE + 1] & 0xFF) << 8)
-                    + (array[idx * RelatednessMatrix.EL_SIZE + 2] & 0xFF);
-
-            if (idx_value == key) {
-                pos = idx;
-            } else {
-                if (key > idx_value) {
-                    start = (idx + 1) * RelatednessMatrix.EL_SIZE;
-                } else {
-                    end = (idx - 1) * RelatednessMatrix.EL_SIZE;
-                }
-            }
-        }
-
-        if (pos == -1) {
-            return 0f;
-        } else {
-            byte by = array[pos * RelatednessMatrix.EL_SIZE + 3];
-            int byint = by + 128;
-            float byteRel = byint / 255f;
-            return data.configuredMinRel + byteRel * (1 - data.configuredMinRel);
-        }
-    }*/
     public void ReadDump(String dump) throws Exception {
         BufferedReader fbr = new BufferedReader(new FileReader(dump));
         String line = new String();
@@ -174,11 +126,11 @@ public class NativeImplementation extends BaseImplementation implements IBaseImp
                 }
                 idx++;
             }
-            /*
+            
             if (idx != nodesSize) {
                 throw new Exception("Wrong format relatedness file the number of line do not match with size of matrix");
             }
-             */
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
             _matrix = null;

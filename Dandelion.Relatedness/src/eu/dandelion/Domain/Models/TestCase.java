@@ -2,9 +2,7 @@ package eu.dandelion.Domain.Models;
 
 public class TestCase {
     public int FirstId;
-    public int FirstMapId;
     public int SecondId;
-    public int SecondMapId;
     public float Relatedness;
     
     public TestCase(String[] serializedTestCase)
