@@ -7,6 +7,7 @@ import eu.dandelion.Domain.Models.Localizations;
 import eu.dandelion.Domain.Models.TestCase;
 import static java.lang.System.out;
 import static java.lang.Thread.sleep;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,9 +28,12 @@ public class Main {
 
     public static void TestNativeImplementation() throws Exception {
         // Read dump
+        out.println(new Timestamp(System.currentTimeMillis()) + "\t Read Dump - STARTED");
         NativeImplementation nativeImplementation = new NativeImplementation(Localizations.GeneratedDumpPath);
+        out.println(new Timestamp(System.currentTimeMillis()) + "\t Read Dump - ENDED");
 
         // Load test cases
+        out.println(new Timestamp(System.currentTimeMillis()) + "\t Testing - STARTED");
         RandomDumpGenerator dumpGenerator = new RandomDumpGenerator();
         for (TestCase test : dumpGenerator.ReadTestCases(Localizations.TestCasesPath)) {
             // Get relatedness and check value
@@ -40,13 +44,17 @@ public class Main {
                 throw new Exception("Expected relatedness and current relatedness doesn't match");
             }
         }
+        out.println(new Timestamp(System.currentTimeMillis()) + "\t Testing - ENDED");
     }
 
     public static void TestHashMapImplementation() throws Exception {
         // Read dump
+        out.println(new Timestamp(System.currentTimeMillis()) + "\t Read Dump - STARTED");
         HashMapImplementation hashMapImplementation = new HashMapImplementation(Localizations.GeneratedDumpPath);
+        out.println(new Timestamp(System.currentTimeMillis()) + "\t Read Dump - ENDED");
 
         // Load test cases
+        out.println(new Timestamp(System.currentTimeMillis()) + "\t Testing - STARTED");
         RandomDumpGenerator dumpGenerator = new RandomDumpGenerator();
         for (TestCase test : dumpGenerator.ReadTestCases(Localizations.TestCasesPath)) {
             // Get relatedness and check value
@@ -57,6 +65,7 @@ public class Main {
                 throw new Exception("Expected relatedness and current relatedness doesn't match");
             }
         }
+        out.println(new Timestamp(System.currentTimeMillis()) + "\t Testing - ENDED");
     }
 
     public static void DockerTest() throws Exception {

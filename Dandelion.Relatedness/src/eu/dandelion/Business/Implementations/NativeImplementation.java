@@ -37,8 +37,8 @@ public class NativeImplementation extends BaseImplementation implements IBaseImp
         }
 
         byte[] array = a > b ? _matrix[nodeA] : _matrix[nodeB];
-        out.println("node: " + (a > b ? nodeA : nodeB));
-        //printPostingList(array);
+        // out.println("node: " + (a > b ? nodeA : nodeB));
+        // printPostingList(array);
         if (array == null) {
             return 0f;
         }
