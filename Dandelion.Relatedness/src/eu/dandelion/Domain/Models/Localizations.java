@@ -5,8 +5,8 @@ public class Localizations {
     public static final int MinIntersection = 2;
     public static final double Treshold = 1.0;
     public static final int NumberOfTests = 4000;
-    public static final int MaxId = 100;
-    public static final int NodesSize = 100;
+    public static final int MaxId = 20000;
+    public static final int NodesSize = 18000;
     public static final double NullPercentage = 0.5;
     public static final int numberOfDigits = (int) (Math.log(MaxId) / Math.log(10));
     

@@ -14,11 +14,16 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+        out.println("Localizations:" + Localizations.MaxId);
         out.println("Process Started");
+        sleep(10000);
+        
         GenerateNewDump();
         TestHashMapImplementation();
         TestNativeImplementation();
+        
         out.println("Process Ended");
+        sleep(60 * 60 * 1000);
     }
 
     public static void GenerateNewDump() throws Exception {
