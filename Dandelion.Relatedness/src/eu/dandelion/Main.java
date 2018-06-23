@@ -16,8 +16,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         out.println("Process Started");
         GenerateNewDump();
-        TestNativeImplementation();
         TestHashMapImplementation();
+        TestNativeImplementation();
         out.println("Process Ended");
     }
 

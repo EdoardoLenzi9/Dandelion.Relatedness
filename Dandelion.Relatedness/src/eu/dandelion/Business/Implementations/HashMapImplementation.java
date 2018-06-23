@@ -2,12 +2,14 @@ package eu.dandelion.Business.Implementations;
 
 import eu.dandelion.Business.Implementations.Base.BaseImplementation;
 import eu.dandelion.Business.Implementations.Base.IBaseImplementation;
+import eu.dandelion.Domain.Models.Localizations;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
 import java.util.Base64;
 import java.util.HashMap;
+import org.apache.commons.math3.exception.util.Localizable;
 
 public class HashMapImplementation extends BaseImplementation implements IBaseImplementation {
     
@@ -37,7 +39,7 @@ public class HashMapImplementation extends BaseImplementation implements IBaseIm
             return 0f;
         }
 
-        String key = (nodeA > nodeB) ? (nodeA + "." + nodeB) : (nodeB + "." + nodeA);
+        int key = (nodeA > nodeB) ? CreateHashKey(nodeA, nodeB) : CreateHashKey(nodeB, nodeA);
         try {
             byte value = (byte) _hashMap.get(key);
 
@@ -92,8 +94,7 @@ public class HashMapImplementation extends BaseImplementation implements IBaseIm
                         int idx_value =   ((postingList[index] & 0xFF) << 16)
                                         + ((postingList[index + 1] & 0xFF) << 8)
                                         + ((postingList[index + 2] & 0xFF) /* << 0 */);
-
-                        String key = idx_value + "." + node;
+                        int key = CreateHashKey(idx_value, node);
                         _hashMap.put(key, postingList[index + 3]);
                     }
         
@@ -103,5 +104,18 @@ public class HashMapImplementation extends BaseImplementation implements IBaseIm
             System.out.println(e.getMessage());
             _hashMap = null;
         }
+    }
+    
+    private int CreateHashKey(int a, int b)
+    {
+        StringBuilder key = new StringBuilder();
+        key.append(b);
+        int numberOfZeros = Localizations.numberOfDigits - (int)(Math.log(a) / Math.log(10));
+        for(int i = 0; i < numberOfZeros; i++)
+        {
+            key.append('0');
+        }
+        key.append(a);
+        return Integer.parseInt(key.toString());
     }
 }
