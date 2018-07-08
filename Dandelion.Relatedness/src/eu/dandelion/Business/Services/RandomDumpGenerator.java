@@ -96,7 +96,12 @@ public class RandomDumpGenerator implements IDumpGenerator {
             int firstId = testDomain.get(random.nextInt(nodeSize - 1));
             int secondId = testDomain.get(random.nextInt(nodeSize - 1));
             float relatedness = nativeImplementation.Relatedness(firstId, secondId);
-            testCases.append(firstId).append(';').append(secondId).append(';').append(relatedness).append('\n');
+            if(relatedness != 0.0)
+            {
+                testCases.append(firstId).append(';').append(secondId).append(';').append(relatedness).append('\n');
+            } else {
+                i--;
+            }
         }
         
         FileUtils.Print(Localizations.TestCasesPath , testCases.toString());

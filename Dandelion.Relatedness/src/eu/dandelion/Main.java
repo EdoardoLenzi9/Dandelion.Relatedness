@@ -16,14 +16,14 @@ public class Main {
     public static void main(String[] args) throws Exception {
         out.println("Localizations:" + Localizations.MaxId);
         out.println("Process Started");
-        sleep(10000);
+        //sleep(10000);
         
-        GenerateNewDump();
+        //GenerateNewDump();
         TestHashMapImplementation();
-        TestNativeImplementation();
+        // TestNativeImplementation();
         
         out.println("Process Ended");
-        sleep(60 * 60 * 1000);
+        //sleep(60 * 60 * 1000);
     }
 
     public static void GenerateNewDump() throws Exception {
@@ -33,12 +33,17 @@ public class Main {
 
     public static void TestNativeImplementation() throws Exception {
         // Read dump
-        out.println(new Timestamp(System.currentTimeMillis()) + "\t Read Dump - STARTED");
+        
+        Timestamp initialReadTime = new Timestamp(System.currentTimeMillis());
+        //out.println(initialReadTime + "\t Read Dump - STARTED");
         NativeImplementation nativeImplementation = new NativeImplementation(Localizations.GeneratedDumpPath);
-        out.println(new Timestamp(System.currentTimeMillis()) + "\t Read Dump - ENDED");
+        Timestamp finalReadTime = new Timestamp(System.currentTimeMillis());
+        //out.println(finalReadTime + "\t Read Dump - ENDED");
+        out.println("NATIVE READ TIME\t" + (finalReadTime.getTime() - initialReadTime.getTime()));
 
         // Load test cases
-        out.println(new Timestamp(System.currentTimeMillis()) + "\t Testing - STARTED");
+        Timestamp initialTestTime = new Timestamp(System.currentTimeMillis());
+        //out.println(initialTestTime + "\t Testing - STARTED");
         RandomDumpGenerator dumpGenerator = new RandomDumpGenerator();
         for (TestCase test : dumpGenerator.ReadTestCases(Localizations.TestCasesPath)) {
             // Get relatedness and check value
@@ -49,17 +54,23 @@ public class Main {
                 throw new Exception("Expected relatedness and current relatedness doesn't match");
             }
         }
-        out.println(new Timestamp(System.currentTimeMillis()) + "\t Testing - ENDED");
+        Timestamp finalTestTime = new Timestamp(System.currentTimeMillis());
+        //out.println(finalTestTime + "\t Testing - ENDED");
+        out.println("NATIVE TEST TIME\t" + (finalTestTime.getTime() - initialTestTime.getTime()));
     }
 
     public static void TestHashMapImplementation() throws Exception {
         // Read dump
-        out.println(new Timestamp(System.currentTimeMillis()) + "\t Read Dump - STARTED");
+        Timestamp initialReadTime = new Timestamp(System.currentTimeMillis());
+        //out.println(initialReadTime + "\t Read Dump - STARTED");
         HashMapImplementation hashMapImplementation = new HashMapImplementation(Localizations.GeneratedDumpPath);
-        out.println(new Timestamp(System.currentTimeMillis()) + "\t Read Dump - ENDED");
+        Timestamp finalReadTime = new Timestamp(System.currentTimeMillis());
+        //out.println(finalReadTime + "\t Read Dump - ENDED");
+        out.println("HASH READ TIME\t" + (finalReadTime.getTime() - initialReadTime.getTime()));
 
         // Load test cases
-        out.println(new Timestamp(System.currentTimeMillis()) + "\t Testing - STARTED");
+        Timestamp initialTestTime = new Timestamp(System.currentTimeMillis());
+        //out.println(initialTestTime + "\t Testing - STARTED");
         RandomDumpGenerator dumpGenerator = new RandomDumpGenerator();
         for (TestCase test : dumpGenerator.ReadTestCases(Localizations.TestCasesPath)) {
             // Get relatedness and check value
@@ -70,7 +81,9 @@ public class Main {
                 throw new Exception("Expected relatedness and current relatedness doesn't match");
             }
         }
-        out.println(new Timestamp(System.currentTimeMillis()) + "\t Testing - ENDED");
+        Timestamp finalTestTime = new Timestamp(System.currentTimeMillis());
+        //out.println(finalTestTime + "\t Testing - ENDED");
+        out.println("HASH TEST TIME\t" + (finalTestTime.getTime() - initialTestTime.getTime()));
     }
 
     public static void DockerTest() throws Exception {

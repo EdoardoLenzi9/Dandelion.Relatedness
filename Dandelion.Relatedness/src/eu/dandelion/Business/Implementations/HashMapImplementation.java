@@ -4,12 +4,9 @@ import eu.dandelion.Business.Implementations.Base.BaseImplementation;
 import eu.dandelion.Business.Implementations.Base.IBaseImplementation;
 import eu.dandelion.Domain.Models.Localizations;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
-import java.net.URL;
 import java.util.Base64;
 import java.util.HashMap;
-import org.apache.commons.math3.exception.util.Localizable;
 
 public class HashMapImplementation extends BaseImplementation implements IBaseImplementation {
     
@@ -39,7 +36,7 @@ public class HashMapImplementation extends BaseImplementation implements IBaseIm
             return 0f;
         }
 
-        int key = (nodeA > nodeB) ? CreateHashKey(nodeA, nodeB) : CreateHashKey(nodeB, nodeA);
+        long key = (nodeA > nodeB) ? CreateHashKey(nodeA, nodeB) : CreateHashKey(nodeB, nodeA);
         try {
             byte value = (byte) _hashMap.get(key);
 
@@ -94,7 +91,7 @@ public class HashMapImplementation extends BaseImplementation implements IBaseIm
                         int idx_value =   ((postingList[index] & 0xFF) << 16)
                                         + ((postingList[index + 1] & 0xFF) << 8)
                                         + ((postingList[index + 2] & 0xFF) /* << 0 */);
-                        int key = CreateHashKey(idx_value, node);
+                        long key = CreateHashKey(idx_value, node);
                         _hashMap.put(key, postingList[index + 3]);
                     }
         
@@ -106,7 +103,7 @@ public class HashMapImplementation extends BaseImplementation implements IBaseIm
         }
     }
     
-    private int CreateHashKey(int a, int b)
+    private long CreateHashKey(int a, int b)
     {
         StringBuilder key = new StringBuilder();
         key.append(b);
@@ -116,6 +113,6 @@ public class HashMapImplementation extends BaseImplementation implements IBaseIm
             key.append('0');
         }
         key.append(a);
-        return Integer.parseInt(key.toString());
+        return Long.parseLong(key.toString());
     }
 }
